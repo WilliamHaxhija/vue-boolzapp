@@ -1,8 +1,16 @@
+/*--------
+   RESET
+--------*/
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*-----------
+   GENERAL
+-----------*/
 
 body {
     height: 100vh;
@@ -16,15 +24,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.col-30 {
-    width: 30%;
-    background-color: white;
-}
-
-.col-70 {
-    width: 70%;
 }
 
 #app,
@@ -47,6 +46,42 @@ body {
     height: 100%;
     flex-direction: column;
 }
+
+/*-----------
+  UTILITIES
+-----------*/
+
+.dnone {
+    display: none;
+}
+
+.clicked {
+    background-color: #dadfdf;
+}
+
+.sent {
+    background-color: #d5f9ba;
+    margin-left: auto;
+}
+
+.received {
+    background-color: white;
+}
+
+/*--------
+   APP
+--------*/
+
+.col-30 {
+    width: 30%;
+    background-color: white;
+}
+
+.col-70 {
+    width: 70%;
+}
+
+/*** Profile ***/
 
 .profile {
     align-items: center;
@@ -78,6 +113,8 @@ img {
     color: #aeaeae;
 }
 
+/*** Banner ***/
+
 .banner {
     background-color: #8edafc;
     padding: 0.6rem 1rem;
@@ -105,6 +142,8 @@ img {
     color: #6c9aa4;
 }
 
+/*** Search Input ***/
+
 .search {
     background-color: #fafafa;
     padding: 0.4rem;
@@ -126,6 +165,7 @@ input {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
 .search input {
     width: 85%;
     padding: 0.5rem;
@@ -133,6 +173,8 @@ input {
     border-bottom-right-radius: 5px;
     font-size: 0.75rem;
 }
+
+/*** Contacts ***/
 
 .conversations {
     flex-grow: 1;
@@ -148,20 +190,8 @@ input {
     border-bottom: 1px solid #f0f1f3;
 }
 
-.clicked {
-    background-color: #dadfdf;
-}
-
-.single-chat:hover {
-    background-color: #e9ebeb;
-}
-
 .single-chat small {
     color: #c4c6c9;
-}
-
-.dnone {
-    display: none;
 }
 
 .name {
@@ -177,6 +207,8 @@ input {
     margin-left: auto;
 }
 
+/*** Selected Contact ***/
+
 .col-70 .single-chat {
     height: 56px;
     background-color: #eaeaea;
@@ -185,6 +217,7 @@ input {
 .col-70 .single-chat small {
     color: #6c9aa4;
 }
+
 .col-70 .icons {
     margin-left: auto;
     color: #aeaeae;
@@ -195,12 +228,16 @@ input {
     margin-left: 0.8rem;
 }
 
+/*** Chat Area ***/
+
 .chat-area {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
     padding: 3rem 5rem;
 }
+
+/*** Messages ***/
 
 .message {
     width: 40%;
@@ -213,15 +250,6 @@ input {
     margin-bottom: 0.5rem;
 }
 
-.sent {
-    background-color: #d5f9ba;
-    margin-left: auto;
-}
-
-.received {
-    background-color: white;
-}
-
 .message small {
     position: absolute;
     bottom: 5px;
@@ -230,6 +258,8 @@ input {
     color: #b9c6bb;
 }
 
+/*** Dropdown Menu ***/
+
 .fa-chevron-down {
     position: absolute;
     top: 10px;
@@ -237,9 +267,7 @@ input {
     color: #6b7376;
 }
 
-.message:hover .fa-chevron-down {
-    display: inline!important;
-}
+/*** Text Area ***/
 
 .my-text-area {
     background-color: #f3eeea;
@@ -262,7 +290,18 @@ input {
     font-size: 1.2rem;
 }
 
+/*--------
+  HOVER
+--------*/
+
 i:hover {
     cursor: pointer;
 }
 
+.message:hover .fa-chevron-down {
+    display: inline!important;
+}
+
+.single-chat:hover {
+    background-color: #e9ebeb;
+}

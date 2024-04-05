@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+// Luxon Library
 const dt = luxon.DateTime;
 createApp({
     data() {
@@ -83,12 +84,17 @@ createApp({
                 ],
               },
             ],
+            
+            // Variables
             activeContact: 0,
             newMessage: '',
             searchContact: ''
         };
     },
     methods: {
+      // FUNCTIONS
+
+      // Filtering Contacts Function
       filterContacts: function(array, string) {
         array.forEach(contact => {
           if (!contact.name.toLowerCase().includes(string.toLowerCase())) {
@@ -98,9 +104,13 @@ createApp({
           };
         });
       },
+
+      // Activates choosen contact conversation
       activateContact: function(index) {
         this.activeContact = index;
       },
+
+      // Creates an 'ok' message by CPU that replies to every message you write in the bottom input
       receiveMessage: function() {
         const now = dt.now().setLocale('fr').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
         const triggeredMessage = {
@@ -110,6 +120,8 @@ createApp({
         };
         this.contacts[this.activeContact].messages.push(triggeredMessage);
       },
+
+      // Triggers whenever you press 'enter', creates a message with your text
       addNewMessage: function() {
         const now = dt.now().setLocale('fr').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
         if (this.newMessage.trim() != '') {
@@ -123,6 +135,8 @@ createApp({
           setTimeout(this.receiveMessage, 1000);
         }
       },
+
+      // Deletes a message
       deleteMessage(index) {
         this.contacts[this.activeContact].messages.splice(index, 1);
       }

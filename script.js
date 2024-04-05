@@ -41,7 +41,7 @@ createApp({
                   {
                     date: '20/03/2020 16:35:00',
                     message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                    status: 'received'
+                    status: 'sent'
                   }
                 ],
               },
@@ -83,12 +83,33 @@ createApp({
                 ],
               },
             ],
-            activeContact: 0
+            activeContact: 0,
+            newMessage: ''
         };
     },
     methods: {
       activateContact: function(index) {
         this.activeContact = index;
+      },
+      receiveMessage: function() {
+        const triggeredMessage = {
+          date: null,
+          message: 'ok',
+          status: 'received'
+        };
+        this.contacts[this.activeContact].messages.push(triggeredMessage);
+      },
+      addNewMessage: function() {
+        if (this.newMessage.trim() != '') {
+          const myMessage = {
+            date: null,
+            message: this.newMessage,
+            status: 'sent'
+          };
+          this.contacts[this.activeContact].messages.push(myMessage);
+          this.newMessage = '';
+          setTimeout(this.receiveMessage, 1000);
+        }
       }
     }
 }).mount('#app');

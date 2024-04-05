@@ -41,9 +41,9 @@
             <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="conversations">
-            <div v-for="contact, index in contacts" class="single-chat" @click="activateContact(index)">
+            <div v-for="contact, index in contacts" class="single-chat" :class="{clicked: index == activeContact}" @click="activateContact(index)">
                 <div>
-                    <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="avatar_1">
+                    <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="avatar_[activeContact]">
                 </div>
                 <div class="name">
                     <span>{{contacts[index].name}}</span>
@@ -56,10 +56,10 @@
     <div class="col-70">
         <div class="single-chat">
             <div>
-                <img src="./img/avatar_1.jpg" alt="avatar_1">
+                <img :src="'./img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="avatar_[activeContact]">
             </div>
             <div class="name">
-                <span>Michele</span>
+                <span>{{contacts[activeContact].name}}</span>
                 <small>Ultimo accesso oggi alle 12.00</small>
             </div>
             <div class="icons">
@@ -78,7 +78,7 @@
             <span>
                 <i class="fa-regular fa-face-smile"></i>
             </span>
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input v-model="newMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="addNewMessage">
             <span>
                 <i class="fa-solid fa-microphone"></i>
             </span>

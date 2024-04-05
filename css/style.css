@@ -148,6 +148,10 @@ input {
     border-bottom: 1px solid #f0f1f3;
 }
 
+.clicked {
+    background-color: #dadfdf;
+}
+
 .single-chat:hover {
     background-color: #e9ebeb;
 }

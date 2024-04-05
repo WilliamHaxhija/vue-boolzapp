@@ -6,7 +6,6 @@
     <title>Boolzapp</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
 
@@ -42,7 +41,7 @@
             <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="conversations">
-            <div v-for="contact, index in contacts" class="single-chat">
+            <div v-for="contact, index in contacts" class="single-chat" @click="activateContact(index)">
                 <div>
                     <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="avatar_1">
                 </div>
@@ -70,13 +69,9 @@
             </div>
         </div>
         <div class="chat-area">
-            <div class="message sent">
-                Hai portato a spasso il cane?
-                <small>15.30</small>
-            </div>
-            <div class="message received">
-                Hai portato a spasso il cane?
-                <small>15.30</small>
+            <div v-for="messageData in contacts[activeContact].messages" class="message" :class="messageData.status">
+                <span>{{messageData.message}}</span>
+                <small>{{messageData.date}}</small>
             </div>
         </div>
         <div class="my-text-area">
@@ -90,6 +85,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="./script.js"></script>
 
    </div> 

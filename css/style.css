@@ -202,6 +202,7 @@ input {
     justify-content: start;
     padding: 1rem;
     position: relative;
+    margin-bottom: 0.5rem;
 }
 
 .sent {

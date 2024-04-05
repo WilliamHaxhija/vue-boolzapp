@@ -83,8 +83,12 @@ createApp({
                 ],
               },
             ],
+            activeContact: 0
         };
     },
     methods: {
+      activateContact: function(index) {
+        this.activeContact = index;
+      }
     }
 }).mount('#app');

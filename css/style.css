@@ -305,3 +305,13 @@ i:hover {
 .single-chat:hover {
     background-color: #e9ebeb;
 }
+
+/*---------------
+  MEDIA QUERIES
+---------------*/
+
+@media screen and (max-width: 1000px) {
+    #app {
+        min-width: 1000px;
+    }
+}

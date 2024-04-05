@@ -47,16 +47,31 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </label>
             </div>
-            <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact" @keyup="filterContacts(contacts, searchContact)">
+            <!-- Search Input -->
+            <input 
+            id="search-bar" 
+            type="text" 
+            placeholder="Cerca o inizia una nuova chat" 
+            v-model="searchContact" 
+            @keyup="filterContacts(contacts, searchContact)"
+            >
         </div>
 
         <!-- Dynamic Contacts -->
 
         <div class="conversations">
             <!-- Single Contact -->
-            <div v-for="contact, index in contacts" class="single-chat" :class="{clicked: index == activeContact, dnone: contact.visible == false}"  @click="activateContact(index)">
+            <div 
+            v-for="contact, index in contacts" 
+            class="single-chat" 
+            :class="{clicked: index == activeContact, dnone: contact.visible == false}" 
+            @click="activateContact(index)"
+            >
                 <div>
-                    <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="avatar_[activeContact]">
+                    <img 
+                    :src="'./img/avatar' + contact.avatar + '.jpg'" 
+                    alt="avatar_[activeContact]"
+                    >
                 </div>
                 <div class="name">
                     <span>{{contacts[index].name}}</span>
@@ -73,7 +88,10 @@
         <!-- Single Contact Active -->
         <div class="single-chat">
             <div>
-                <img :src="'./img/avatar' + contacts[activeContact].avatar + '.jpg'" alt="avatar_[activeContact]">
+                <img 
+                :src="'./img/avatar' + contacts[activeContact].avatar + '.jpg'" 
+                alt="avatar_[activeContact]"
+                >
             </div>
             <div class="name">
                 <span>{{contacts[activeContact].name}}</span>
@@ -90,9 +108,17 @@
 
         <div class="chat-area">
             <!-- Messages -->
-            <div v-for="messageData, index in contacts[activeContact].messages" class="message dropdown position-relative" :class="messageData.status">
+            <div 
+            v-for="messageData, index in contacts[activeContact].messages" 
+            class="message dropdown position-relative" 
+            :class="messageData.status"
+            >
                 <span>{{messageData.message}}</span>
-                <i class="fa-solid fa-chevron-down d-none" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                <i 
+                class="fa-solid fa-chevron-down d-none" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+                ></i>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Message Info</a></li>
                     <li><a class="dropdown-item" @click="deleteMessage(index)" href="#">Delete Message</a></li>
@@ -108,7 +134,12 @@
                 <i class="fa-regular fa-face-smile"></i>
             </span>
             <!-- Messages Text Input -->
-            <input v-model="newMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="addNewMessage">
+            <input 
+            v-model="newMessage" 
+            type="text" 
+            placeholder="Scrivi un messaggio" 
+            @keyup.enter="addNewMessage"
+            >
             <span>
                 <i class="fa-solid fa-microphone"></i>
             </span>

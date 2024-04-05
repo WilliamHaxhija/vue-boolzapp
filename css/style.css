@@ -230,6 +230,17 @@ input {
     color: #b9c6bb;
 }
 
+.fa-chevron-down {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #6b7376;
+}
+
+.message:hover .fa-chevron-down {
+    display: inline!important;
+}
+
 .my-text-area {
     background-color: #f3eeea;
     padding: 0.4rem 0.5rem;

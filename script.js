@@ -92,9 +92,9 @@ createApp({
       filterContacts: function(array, string) {
         array.forEach(contact => {
           if (!contact.name.toLowerCase().includes(string.toLowerCase())) {
-            contact.visibile = false;
+            contact.visible = false;
           }  else if ((string == '')) {
-            contact.visibile = true;
+            contact.visible = true;
           };
         });
       },
@@ -120,6 +120,9 @@ createApp({
           this.newMessage = '';
           setTimeout(this.receiveMessage, 1000);
         }
+      },
+      deleteMessage(index) {
+        this.contacts[this.activeContact].messages.splice(index, 1);
       }
     }
 }).mount('#app');

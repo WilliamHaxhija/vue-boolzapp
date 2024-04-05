@@ -160,6 +160,10 @@ input {
     color: #c4c6c9;
 }
 
+.dnone {
+    display: none;
+}
+
 .name {
     flex-direction: column;
     margin-left: 1rem;

@@ -38,10 +38,10 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </label>
             </div>
-            <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+            <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact" @keyup="filterContacts(contacts, searchContact)">
         </div>
         <div class="conversations">
-            <div v-for="contact, index in contacts" class="single-chat" :class="{clicked: index == activeContact}" @click="activateContact(index)">
+            <div v-for="contact, index in contacts" class="single-chat" :class="{clicked: index == activeContact, dnone: contact.visibile == false}"  @click="activateContact(index)">
                 <div>
                     <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="avatar_[activeContact]">
                 </div>

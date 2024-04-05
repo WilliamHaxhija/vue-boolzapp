@@ -84,10 +84,20 @@ createApp({
               },
             ],
             activeContact: 0,
-            newMessage: ''
+            newMessage: '',
+            searchContact: ''
         };
     },
     methods: {
+      filterContacts: function(array, string) {
+        array.forEach(contact => {
+          if (!contact.name.toLowerCase().includes(string.toLowerCase())) {
+            contact.visibile = false;
+          }  else if ((string == '')) {
+            contact.visibile = true;
+          };
+        });
+      },
       activateContact: function(index) {
         this.activeContact = index;
       },

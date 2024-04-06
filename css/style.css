@@ -56,7 +56,7 @@ body {
 }
 
 .clicked {
-    background-color: #dadfdf;
+    background-color: #e9ebeb;
 }
 
 .sent {
@@ -118,6 +118,7 @@ img {
 .banner {
     background-color: #8edafc;
     padding: 0.6rem 1rem;
+    font-size: 0.91rem;
 }
 
 .bell {
@@ -131,6 +132,7 @@ img {
     margin-right: 0.6rem;
     flex-shrink: 0;
     flex-grow: 0;
+    font-size: 1rem;
 }
 
 .fa-bell-slash {
@@ -171,7 +173,7 @@ input {
     padding: 0.5rem;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 }
 
 /*** Contacts ***/
@@ -252,9 +254,9 @@ input {
 
 .message small {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
-    font-size: 12px;
+    bottom: 0;
+    right: 7px;
+    font-size: 11px;
     color: #b9c6bb;
 }
 
@@ -262,9 +264,10 @@ input {
 
 .fa-chevron-down {
     position: absolute;
-    top: 10px;
+    top: 6px;
     right: 10px;
     color: #6b7376;
+    font-size: 0.9rem;
 }
 
 /*** Text Area ***/

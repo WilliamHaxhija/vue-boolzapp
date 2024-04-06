@@ -99,7 +99,7 @@ createApp({
         array.forEach(contact => {
           if (!contact.name.toLowerCase().includes(string.toLowerCase())) {
             contact.visible = false;
-          }  else if (string == '') {
+          }  else if (string == '' || contact.name.toLowerCase().includes(string.toLowerCase())) {
             contact.visible = true;
           };
         });

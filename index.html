@@ -76,7 +76,9 @@
                 </div>
                 <div class="name">
                     <span>{{contact.name}}</span>
-                    <small>{{contact.messages[contact.messages.length - 1].message}}</small>
+                    <small
+                    v-if="contact.messages.length > 0"
+                    >{{contact.messages[contact.messages.length - 1].message}}</small>
                 </div>
                 <small class="hour">12.00</small>
             </div>
@@ -114,7 +116,8 @@
             class="message dropdown position-relative" 
             :class="messageData.status"
             >
-                <span>{{messageData.message}}</span>
+                <span v-if="contacts[activeContact].messages.length > 0">{{messageData.message}}</span>
+                <span v-else></span>
                 <i 
                 class="fa-solid fa-chevron-down d-none" 
                 data-bs-toggle="dropdown" 

@@ -121,7 +121,7 @@ createApp({
         this.contacts[this.activeContact].messages.push(triggeredMessage);
       },
 
-      // Triggers whenever you press 'enter', creates a message with your text
+      // Triggers whenever you press 'enter' when focused on the message input, creates a message with your text
       addNewMessage: function() {
         const now = dt.now().setLocale('fr').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS)
         if (this.newMessage.trim() != '') {
